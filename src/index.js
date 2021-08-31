@@ -18,10 +18,18 @@ const onClickAdd = () => {
   // 完了ボタンの作成
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {
+    alert("完了");
+  });
 
   // 削除ボタンの作成
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    // 押された削除ボタンの親タグを削除(parentNodeは親要素を取得するデフォルトの関数)
+    const deleteTarget = deleteButton.parentNode;
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
+  });
 
   // divタグの子要素に各要素を設定
   div.appendChild(li);
